@@ -8,5 +8,9 @@ int read_data(char const *file_name, struct Tsunami *arr, int max_cnt)
 {   
     char info
     FILE *open = (file_name,"r")
-    while(fscanf("%d %d %d %d %0.2f %s",arr->day,arr->month,arr->year,arr->fatalities,arr->maxwave,arr->location)!=EOF);
+    for(int i = 0;i<max_cnt;i++)
+    {
+        fscanf("%d %d %d %d %0.2f %80[^\n]",arr->day,arr->month,arr->year,arr->fatalities,arr->maxwave,arr->location)
+    }
+    
 }
