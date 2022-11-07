@@ -19,7 +19,7 @@
 typedef int numbers;
 typedef double height;
 typedef unsigned char geo[81];
-struct Tsunami[100]
+struct Tsunami
 {
     numbers day;
     numbers month;
