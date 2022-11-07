@@ -18,7 +18,7 @@
 // TODO: Repeat function documentation block plus function declaration for remaining functions
 typedef int numbers;
 typedef double height;
-typedef unsigned char geo[80];
+typedef unsigned char geo[81];
 struct Tsunami
 {
     numbers day;
