@@ -27,7 +27,8 @@ struct Tsunami
     numbers fatalities;
     height maxwave;
     geo location; 
-};
+}
+
 
 
 /*
