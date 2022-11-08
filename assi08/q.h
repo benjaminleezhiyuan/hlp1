@@ -6,6 +6,7 @@ Section A
 Assignment 08
 28/10/22
 Brief
+This file contains functions needed for qdriver.c
 */
 // NOTE 1: This file should not contain any standard library s.
 // The auto-grader will not accept your submission if this file

@@ -6,7 +6,10 @@ Section A
 Assignment 08
 28/10/22
 Brief
-
+This file contains all the definitions of functions declared in q.h
+The functions in this file finds characters in an open range of characters.
+It can count how many instances of a character or characers are found in a string
+It can compare the values of 2 strings and return whether it is larger than or less than
 */
 // NOTE 2: Even if you don't need the NULL, don't remove this macro ...
 #define NULL ((void*)0) 

@@ -1,7 +1,17 @@
 #ifndef Q_H
 #define Q_H
 
-// TODO: File documentation block required
+/*
+q.h
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Assignment 09
+07/11/22
+Brief
+This file contains the declarations for functions needed to read tsunami info 
+and the struct fot Tsunami.
+*/
 
 // TODO: Include only those C standard library headers that declare/define names used in functions declared below
 
@@ -18,7 +28,7 @@
 // TODO: Repeat function documentation block plus function declaration for remaining functions
 typedef int numbers;
 typedef double height;
-typedef unsigned char geo[81];
+typedef unsigned char geo[80];
 struct Tsunami
 {
     numbers day;
