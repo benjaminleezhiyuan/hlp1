@@ -30,13 +30,14 @@ size_t my_strlen(const char* str)
 }
 char* my_strcpy(char* dest, const char* src)
 {
-    size_t count = my_strlen(src);
-    for(i=0;i<count+1;src++,dst++)
+    for(size_t i=0; src[i]!='\0'; i++)
     {
-        *dest=*src;
+        dest[i]=src[i];
     }
+    dest[i]='\0'
     return dest;
 }
+
 char* my_strcat(char* dest, const char* src);
 int my_strcmp(const char* lhs, const char* rhs);
 char* my_strstr(const char* str, const char* substr);

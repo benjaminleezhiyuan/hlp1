@@ -25,32 +25,46 @@
 
 const char* build_path(const char* parent, const char* separator, const char* const folders[], size_t count)
 {
-    size_t filesize = 0;
+    size_t filesize = STRLEN(parent) + 1;
     for(size_t i=0; i<count; i++)
     {
-        filesize += STRLEN(folders[i])+STRLEN(separator);
+        filesize += STRLEN(folders[i]) + 1;
     }
-
-    char *endpath = debug_malloc(filesize+STRLEN(parent)+1);
-    STRCPY(endpath,separator);
-    STRCAT(endpath,parent);
-    STRCAT(endpath,separator);
-    for(size_t i=1; i<count; i++)
+    char *path = debug_malloc(filesize);
+    STRCPY(path,parent);
+    for(size_t i=0; i<count; i++)
     {
-        STRCAT(endpath,folders[i]);
-        STRCAT(endpath,separator);
+        STRCAT(path,folders[i]);
+        STRCAT(path,separator);
     }
+    return path;
     
 }
 void compare_string(const char* lhs,const char* rhs)
 {
-
+    int ch;
+    ch = STRCMP(lhs, rhs);
+    if(ch == 0)
+        printf("Both strings are equal.\n");
+    else if(ch > 0)
+        printf("Right string goes first.\n");
+    else if(ch < 0)
+        printf("Left string goes first.\n");
 }
+
 void describe_string(const char* text)
 {
-
+    fprintf(stdout,"The length of the path \"%s\" is %ld.\n", text, STRLEN(text));
 }
+
 void find_string(const char* string, const char* substring)
 {
-
+    long int position = STRSTR(string, substring) - string;
+    printf("Searching for a string:\n");
+    printf("\t%-10s%s\n","Text:", string);
+    printf("\t%-10s%s\n","Sub-text:", substring);
+    if(!STRSTR(string, substring))
+        printf("\tResult:   not found\n");
+    else
+        printf("\tResult:   found %ld characters at a position %ld.\n", STRLEN(substring), position);
 }
