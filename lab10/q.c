@@ -44,15 +44,15 @@ void compare_string(const char *lhs, const char *rhs)
     ch = STRCMP(lhs, rhs);
     if (ch == 0)
     {
-        printf("Both strings are equal.\n");
+        fprintf(stdout, "Both strings are equal.\n");
     }
     else if (ch > 0)
     {
-        printf("Right string goes first.\n");
+        fprintf(stdout, "Right string goes first.\n");
     }
     else if (ch < 0)
     {
-        printf("Left string goes first.\n");
+        fprintf(stdout, "Left string goes first.\n");
     }
 }
 
