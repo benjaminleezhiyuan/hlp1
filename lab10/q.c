@@ -12,7 +12,6 @@
 // use by you [and other on your team] solely to aid maintenance and
 // debugging tasks ...
 
-
 // @todo: Provide the definition(s) of function(s) that
 // match the declaration(s) in q.h ...
 
@@ -23,48 +22,57 @@
 // @todo: Provide the definition of the function(s) that
 // match(es) the declaration(s) in q.h ...
 
-const char* build_path(const char* parent, const char* separator, const char* const folders[], size_t count)
+const char *build_path(const char *parent, const char *separator, const char *const folders[], size_t count)
 {
     size_t filesize = STRLEN(parent) + 1;
-    for(size_t i=0; i<count; i++)
+    for (size_t i = 0; i < count; i++)
     {
-        filesize += STRLEN(folders[i]) + 1;
+        filesize += STRLEN(folders[i]) + STRLEN(separator);
     }
     char *path = debug_malloc(filesize);
-    STRCPY(path,parent);
-    for(size_t i=0; i<count; i++)
+    STRCPY(path, parent);
+    for (size_t i = 0; i < count; i++)
     {
-        STRCAT(path,folders[i]);
-        STRCAT(path,separator);
+        STRCAT(path, folders[i]);
+        STRCAT(path, separator);
     }
     return path;
-    
 }
-void compare_string(const char* lhs,const char* rhs)
+void compare_string(const char *lhs, const char *rhs)
 {
     int ch;
     ch = STRCMP(lhs, rhs);
-    if(ch == 0)
+    if (ch == 0)
+    {
         printf("Both strings are equal.\n");
-    else if(ch > 0)
+    }
+    else if (ch > 0)
+    {
         printf("Right string goes first.\n");
-    else if(ch < 0)
+    }
+    else if (ch < 0)
+    {
         printf("Left string goes first.\n");
+    }
 }
 
-void describe_string(const char* text)
+void describe_string(const char *text)
 {
-    fprintf(stdout,"The length of the path \"%s\" is %ld.\n", text, STRLEN(text));
+    fprintf(stdout, "The length of the path \"%s\" is %ld.\n", text, STRLEN(text));
 }
 
-void find_string(const char* string, const char* substring)
+void find_string(const char *string, const char *substring)
 {
     long int position = STRSTR(string, substring) - string;
     printf("Searching for a string:\n");
-    printf("\t%-10s%s\n","Text:", string);
-    printf("\t%-10s%s\n","Sub-text:", substring);
-    if(!STRSTR(string, substring))
+    printf("\t%-10s%s\n", "Text:", string);
+    printf("\t%-10s%s\n", "Sub-text:", substring);
+    if (!STRSTR(string, substring))
+    {
         printf("\tResult:   not found\n");
+    }
     else
+    {
         printf("\tResult:   found %ld characters at a position %ld.\n", STRLEN(substring), position);
+    }
 }

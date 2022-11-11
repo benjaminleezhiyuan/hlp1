@@ -2,7 +2,7 @@
 #define MY_STRING_H
 
 #include <stddef.h>
-
+#include <stdio.h>
 // https://en.cppreference.com/w/c/string/byte/strlen
 size_t my_strlen(const char* str);
 
