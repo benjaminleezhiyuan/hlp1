@@ -43,18 +43,14 @@ char *my_strcpy(char *dest, const char *src)
 char *my_strcat(char *dest, const char *src)
 {
     int i = 0, j = 0;
-    while (dest[i] != '\0')
+    for (; dest[i] != '\0'; i++, j++)
     {
         dest[j] = dest[i];
-        i++;
-        j++;
     }
-    i = 0;
-    while (src[i] != '\0')
+
+    for (i = 0; src[i] != '\0'; i++, j++)
     {
         dest[j] = src[i];
-        i++;
-        j++;
     }
     dest[j] = '\0';
     return dest;
@@ -68,7 +64,7 @@ int my_strcmp(const char *lhs, const char *rhs)
         {
             lhs++;
             rhs++;
-                }
+        }
         else if ((*lhs == '\0' && *rhs != '\0') || (*lhs != '\0' && *rhs == '\0') || *lhs != *rhs)
         {
             if (*lhs < *rhs)
