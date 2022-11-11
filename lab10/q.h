@@ -37,4 +37,4 @@ void debug_free(void* ptr);
 const char* build_path(const char* parent, const char* separator, const char* const folders[], size_t count);
 void compare_string(const char* lhs,const char* rhs);
 void describe_string(const char* text);
-void find_string(const char* substring);
+void find_string(const char* string, const char* substring);

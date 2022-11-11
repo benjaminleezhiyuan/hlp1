@@ -25,13 +25,13 @@
 
 const char* build_path(const char* parent, const char* separator, const char* const folders[], size_t count)
 {
-    size_t filesize = 1;
+    size_t filesize = 0;
     for(size_t i=0; i<count; i++)
     {
         filesize += STRLEN(folders[i])+STRLEN(separator);
     }
 
-    char *endpath = debug_malloc(filesize+STRLEN(parent));
+    char *endpath = debug_malloc(filesize+STRLEN(parent)+1);
     STRCPY(endpath,separator);
     STRCAT(endpath,parent);
     STRCAT(endpath,separator);
@@ -40,8 +40,17 @@ const char* build_path(const char* parent, const char* separator, const char* co
         STRCAT(endpath,folders[i]);
         STRCAT(endpath,separator);
     }
-    return endpath;
+    
 }
-void compare_string(const char* lhs,const char* rhs);
-void describe_string(const char* text);
-void find_string(const char* substring);
+void compare_string(const char* lhs,const char* rhs)
+{
+
+}
+void describe_string(const char* text)
+{
+
+}
+void find_string(const char* string, const char* substring)
+{
+
+}

@@ -1,0 +1,14 @@
+Allocating 35 bytes... done.
+Allocating 41 bytes... done.
+Allocating 41 bytes... done.
+Deallocated data.
+Deallocated data.
+Deallocated data.
+-------------------------------------------------------------------
+Allocating 37 bytes... done.
+Allocating 43 bytes... done.
+Allocating 43 bytes... done.
+Deallocated data.
+Deallocated data.
+Deallocated data.
+-------------------------------------------------------------------
