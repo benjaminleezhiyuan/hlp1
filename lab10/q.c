@@ -67,7 +67,7 @@ void find_string(const char *string, const char *substring)
     printf("Searching for a string:\n");
     printf("\t%-10s%s\n", "Text:", string);
     printf("\t%-10s%s\n", "Sub-text:", substring);
-    if (!STRSTR(string, substring))
+    if (!STRSTR(string, substring)) 
     {
         printf("\tResult:   not found\n");
     }
