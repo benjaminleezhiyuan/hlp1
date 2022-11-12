@@ -10,55 +10,60 @@ This file contains all the opening, closing, reading to and writing to of files 
 This program lets you input any .txt file and will encrypt and decrypt the whole file
 according to what keyword is used.
 */
-#include <stdio.h>	// file and console I/O
+#include <stdio.h> // file and console I/O
 
-#include "q.h"	// include declarations and the decryption keyword
+#include "q.h" // include declarations and the decryption keyword
 
 int main(void)
-{	
-	int index=0;
+{
+	int index = 0;
 	char key[index];
 	char keychar, chartemp;
-	int j = 0,character, keytemp;
-	
-	#ifdef ENCRYPT
+	int j = 0, character, keytemp;
+
+#ifdef ENCRYPT
 	// TODO3: read characters from input file plain.txt and write the
 	// corresponding encrypted characters to output file cipher.txt
 	// using the keyword in file key.txt
 
 	/*open files needed for encrypt*/
-	FILE *keytext = fopen("key.txt","r");
+	FILE *keytext = fopen("key.txt", "r");
 	FILE *plaintext = fopen("plain.txt", "r");
 	FILE *ciphertext = fopen("cipher.txt", "w");
 
-	if(keytext == NULL){
+	if (keytext == NULL)
+	{
 		printf("Unable to open file key.txt\n");
 		return 1;
 	}
-	
-	while((keytemp=fgetc(keytext))!=EOF){
-		key[index]=(char)keytemp;
+
+	while ((keytemp = fgetc(keytext)) != EOF)
+	{
+		key[index] = (char)keytemp;
 		index++;
-		
 	}
-	
-	if (plaintext == NULL) {
+
+	if (plaintext == NULL)
+	{
 
 		printf("Unable to open file plain.txt\n");
 		return 1;
 	}
 
-	if (ciphertext == NULL) {
+	if (ciphertext == NULL)
+	{
 
 		printf("Unable to open file cipher.txt\n");
 		return 1;
 	}
-	
-	while ((character = fgetc(plaintext)) != EOF) {
 
-		chartemp = (char) character;
-		
-		if (j >= (index - 1)) {
+	while ((character = fgetc(plaintext)) != EOF)
+	{
+
+		chartemp = (char)character;
+
+		if (j >= (index - 1))
+		{
 
 			j = 0;
 		}
@@ -74,51 +79,57 @@ int main(void)
 	fclose(plaintext);
 	fclose(ciphertext);
 	fclose(keytext);
-	
-	#else
+
+#else
 
 	// TODO4: read characters from input file cipher.txt and write the
 	// corresponding decrypted characters to output file out-plain.txt
 	// using the keyword in file key.txt
 	int wordcount = 0;
-	
-	FILE *keytext = fopen("key.txt","r");
+
+	FILE *keytext = fopen("key.txt", "r");
 	FILE *ciphertext = fopen("cipher.txt", "r");
 	FILE *plaintext = fopen("out-plain.txt", "w");
-	FILE *onlyspaces = fopen("onlyspaces.txt","w");
-	
+	FILE *onlyspaces = fopen("onlyspaces.txt", "w");
 
-	if(keytext == NULL){
+	if (keytext == NULL)
+	{
 		printf("Unable to open file key.txt\n");
 		return 1;
 	}
-	
-	if (ciphertext == NULL) {
+
+	if (ciphertext == NULL)
+	{
 		printf("Unable to open file cipher.txt\n");
 		return 1;
 	}
-	if (plaintext == NULL) {
+	if (plaintext == NULL)
+	{
 
 		printf("Unable to open fileplain.txt\n");
 		return 1;
 	}
 
-	if(onlyspaces == NULL){
+	if (onlyspaces == NULL)
+	{
 		printf("Unable to open file onlyspaces.txt\n");
 		return 1;
 	}
 
-	int keysize= 0;
-	while((keytemp=fgetc(keytext))!=EOF){
-		key[index]=(char)keytemp;
+	int keysize = 0;
+	while ((keytemp = fgetc(keytext)) != EOF)
+	{
+		key[index] = (char)keytemp;
 		index++;
 		keysize++;
 	}
 
-	while ((character = fgetc(ciphertext)) != EOF) {
-		chartemp = (char) character;
-		
-		if (j >= (index - 1)) {
+	while ((character = fgetc(ciphertext)) != EOF)
+	{
+		chartemp = (char)character;
+
+		if (j >= (index - 1))
+		{
 
 			j = 0;
 		}
@@ -132,31 +143,36 @@ int main(void)
 	fclose(ciphertext);
 
 	char actualtemp;
-	FILE *plaintextopen = fopen("out-plain.txt","r");
-	while((character=fgetc(plaintextopen))!=EOF){
-		actualtemp = (char) character;
-		if(actualtemp == '\r' || actualtemp == '\t' || actualtemp == '\n'){
-			actualtemp=' ';
-			fputc(actualtemp,onlyspaces);
+	FILE *plaintextopen = fopen("out-plain.txt", "r");
+	while ((character = fgetc(plaintextopen)) != EOF)
+	{
+		actualtemp = (char)character;
+		if (actualtemp == '\r' || actualtemp == '\t' || actualtemp == '\n')
+		{
+			actualtemp = ' ';
+			fputc(actualtemp, onlyspaces);
 		}
-		else fputc(actualtemp,onlyspaces);
+		else
+			fputc(actualtemp, onlyspaces);
 	}
 	fclose(plaintextopen);
 	fclose(onlyspaces);
 
-	FILE *input = fopen("onlyspaces.txt","r");
-	char prevchar='x';
-	while((character=fgetc(input))!=EOF){
-		
-		if (prevchar!=' '&& character==' ') {
+	FILE *input = fopen("onlyspaces.txt", "r");
+	char prevchar = 'x';
+	while ((character = fgetc(input)) != EOF)
+	{
+
+		if (prevchar != ' ' && character == ' ')
+		{
 			wordcount++;
 		}
 		prevchar = (char)character;
 	}
 	// TODO5: write count of words into stderr
-	fprintf(stderr,"Words: %d\n",wordcount);
+	fprintf(stderr, "Words: %d\n", wordcount);
 	fclose(input);
-	#endif
+#endif
 
 	return 0;
 }

@@ -8,8 +8,6 @@ Assignment 10
 Brief
 */
 
-// TODO: DO NOT include any C standard library headers
-
 #ifndef Q_H
 #define Q_H
 
@@ -41,8 +39,7 @@ double variance(double const *begin, double const *end);
 double std_dev(double const *begin, double const *end);
 double median(double *base, int size);
 void selection_sort(double *base, int size);
-void ltr_grade_pctg(double const *begin, double const *end,
-                    double *ltr_grades);
+void ltr_grade_pctg(double const *begin, double const *end, double *ltr_grades);
 
 // TODO: Repeat function documentation block plus function declaration for remaining functions
 
