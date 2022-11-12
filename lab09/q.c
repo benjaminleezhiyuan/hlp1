@@ -1,4 +1,17 @@
-// @todo: Add a file documentation header as explained in the specs ...
+/*
+q.c
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Lab 09
+04/11/22
+Brief
+Program reads text files and allows for the conversion of lower case to upper case
+Can return number of words starting with any given character.
+Check for spelling and return if the word is spelt correctly, incorrectly or is not found.
+Returns the amount of words that have 1,2,3,4 and 5 characters in them.
+
+*/
 
 // @todo: Add necessary C standard library headers here ...
 #include <stdio.h>

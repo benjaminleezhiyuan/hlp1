@@ -1,4 +1,13 @@
-// @todo: Add a file-level documentation header as explained in Lab 2 specs ...
+/*
+q.h
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Lab 09
+04/11/22
+Brief 
+This file contains declarations for functions needed for qdriver to function.
+*/
 
 // @todo: Copy type aliases and macros from the current specs
 typedef int WordCount;

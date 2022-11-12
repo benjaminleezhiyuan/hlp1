@@ -1,4 +1,13 @@
-// @todo: Add a file documentation header as explained in the specs ...
+/*
+my_string.c
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Lab 10
+11/11/22
+Brief
+This file contains self defined string.h functions strlen, strcpy, strcat, strcmp and strstr
+*/
 
 // @todo: Add necessary C standard library headers here ...
 #include "my_string.h"

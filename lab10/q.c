@@ -1,3 +1,15 @@
+/*
+q.c
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Lab 10
+11/11/22
+Brief
+This file contains functions that take folders and merges them together to create a path
+directory.
+It also allows you to compare different strings of filepaths and find substring in a string of paths.
+*/
 // @todo: Add a file documentation header as explained in the specs ...
 
 // @todo: Add necessary C standard library headers here ...
@@ -24,10 +36,10 @@
 
 const char *build_path(const char *parent, const char *separator, const char *const folders[], size_t count)
 {
-    size_t filesize = STRLEN(parent) + 1;
+    size_t filesize = STRLEN(parent) + 1; // gets the size of the parent plus null character
     for (size_t i = 0; i < count; i++)
     {
-        filesize += STRLEN(folders[i]) + STRLEN(separator);
+        filesize += STRLEN(folders[i]) + STRLEN(separator); // adds size of each folder and separator into total filesize
     }
     char *path = debug_malloc(filesize);
     STRCPY(path, parent);
