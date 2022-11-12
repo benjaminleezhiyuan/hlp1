@@ -41,19 +41,19 @@ const char *build_path(const char *parent, const char *separator, const char *co
     {
         filesize += STRLEN(folders[i]) + STRLEN(separator); // adds size of each folder and separator into total filesize
     }
-    char *path = debug_malloc(filesize);
-    STRCPY(path, parent);
+    char *path = debug_malloc(filesize); // allocates proper size for path
+    STRCPY(path, parent);                // copy first char to path
     for (size_t i = 0; i < count; i++)
     {
-        STRCAT(path, folders[i]);
-        STRCAT(path, separator);
+        STRCAT(path, folders[i]); // adds folder directories to path
+        STRCAT(path, separator);  // adds seperator between each folder
     }
     return path;
 }
 void compare_string(const char *lhs, const char *rhs)
 {
     int ch;
-    ch = STRCMP(lhs, rhs);
+    ch = STRCMP(lhs, rhs); // compares two strings, returns 0 if equal, <0 if first string goes first and >0 if second string goes first.
     if (ch == 0)
     {
         fprintf(stdout, "Both strings are equal.\n");
@@ -68,18 +68,18 @@ void compare_string(const char *lhs, const char *rhs)
     }
 }
 
-void describe_string(const char *text)
+void describe_string(const char *text) // prints out the path.
 {
     fprintf(stdout, "The length of the path \"%s\" is %ld.\n", text, STRLEN(text));
 }
 
-void find_string(const char *string, const char *substring)
+void find_string(const char *string, const char *substring) // finds substring within a string
 {
-    long int position = STRSTR(string, substring) - string;
+    long int position = STRSTR(string, substring) - string; // returns pointer to the first occurrence of substring in string
     printf("Searching for a string:\n");
     printf("\t%-10s%s\n", "Text:", string);
     printf("\t%-10s%s\n", "Sub-text:", substring);
-    if (!STRSTR(string, substring)) 
+    if (!STRSTR(string, substring))
     {
         printf("\tResult:   not found\n");
     }
