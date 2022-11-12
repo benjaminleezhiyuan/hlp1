@@ -1,4 +1,12 @@
-// TODO: File documentation block required
+/*
+q.h
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Assignment 10
+13/11/22
+Brief
+*/
 
 // TODO: DO NOT include any C standard library headers
 
@@ -16,6 +24,16 @@
 // Is there any particular input that will break the function?
 
 // TODO: Now, declare the necessary function.
+double* read_data(char const *file_name, int *ptr_cnt);
+double max(double const *begin, double const *end);
+double min(double const *begin, double const *end);
+double average(double const *begin, double const *end);
+double variance(double const *begin, double const *end);
+double std_dev(double const *begin, double const *end);
+double median(double *base, int size);
+void selection_sort(double *base, int size);
+void ltr_grade_pctg(double const *begin, double const *end,
+double *ltr_grades);
 
 // TODO: Repeat function documentation block plus function declaration for remaining functions
 
