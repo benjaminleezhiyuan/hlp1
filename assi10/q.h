@@ -14,6 +14,15 @@ Brief
 #define Q_H
 
 // TODO: declare anonymous enumeration type as described in the specs
+enum
+{
+    A_GRADE = 0,
+    B_GRADE = 1,
+    C_GRADE = 2,
+    D_GRADE = 3,
+    F_GRADE = 4,
+    TOT_GRADE = 5
+};
 
 // TODO: A function documentation block provides information that is crucial
 // for clients to correctly use the function. Provide a documention block
@@ -24,7 +33,7 @@ Brief
 // Is there any particular input that will break the function?
 
 // TODO: Now, declare the necessary function.
-double* read_data(char const *file_name, int *ptr_cnt);
+double *read_data(char const *file_name, int *ptr_cnt);
 double max(double const *begin, double const *end);
 double min(double const *begin, double const *end);
 double average(double const *begin, double const *end);
@@ -33,7 +42,7 @@ double std_dev(double const *begin, double const *end);
 double median(double *base, int size);
 void selection_sort(double *base, int size);
 void ltr_grade_pctg(double const *begin, double const *end,
-double *ltr_grades);
+                    double *ltr_grades);
 
 // TODO: Repeat function documentation block plus function declaration for remaining functions
 
