@@ -13,4 +13,4 @@ Minimum grade     :  34.78
 Average grade     :  63.50
 Variance          : 266.97
 Standard deviation:  16.34
-Median grade      :  66.83
+Median grade      :  64.67

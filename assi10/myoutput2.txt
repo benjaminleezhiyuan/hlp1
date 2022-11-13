@@ -8,9 +8,9 @@ Letter Grade |  %age
      D       |  0.00
      F       |  0.00
 
-Maximum grade     :   0.00
-Minimum grade     :   0.00
-Average grade     :   0.00
-Variance          :  0.00
-Standard deviation:   0.00
-Median grade      :   0.00
+Maximum grade     :  97.37
+Minimum grade     :  62.68
+Average grade     :  83.27
+Variance          : 115.70
+Standard deviation:  10.76
+Median grade      :  87.60

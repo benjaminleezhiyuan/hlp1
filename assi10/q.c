@@ -34,9 +34,8 @@ double *read_data(char const *file_name, int *ptr_cnt)
         }
     }
     *ptr_cnt = count;
-    fclose(read);
 
-    read = fopen(file_name,"r");
+    rewind(read);
     double *heap;
     heap = (double *)malloc(sizeof(double) * count);
     double num = 0.0;
@@ -45,7 +44,7 @@ double *read_data(char const *file_name, int *ptr_cnt)
     {
         *(heap + i) = num;
     }
-    printf("%lf",*heap);
+    printf("%lf", *heap);
     fclose(read);
     return heap;
     free(heap);
@@ -103,27 +102,27 @@ double std_dev(double const *begin, double const *end)
     return dev;
 }
 
-void swap(double *lhs, double *rhs)
+/*void swap(double *lhs, double *rhs)
 {
     double temp = *lhs;
     *lhs = *rhs;
     *rhs = temp;
-}
+}*/
 
 void selection_sort(double *base, int size)
 {
-    int i, j, min_idx;
-    for (i = 0; i <= size - 2; i++)
+    double temp;
+    for (int i = 0; i < size; i++)
     {
-        min_idx = i;
-        for (j = i + 1; j < size; j++)
+        for (int j = i + 1; j < size; j++)
         {
-            if (*(base + j) < *(base + min_idx))
+            if (*(base + i) > *(base + j))
             {
-                min_idx = j;
+                temp = *(base + i);
+                *(base + i) = *(base + j);
+                *(base + j) = temp;
             }
         }
-        swap(base + min_idx, base + i);
     }
 }
 
@@ -131,10 +130,11 @@ double median(double *base, int size)
 {
     double median;
     selection_sort(base, size);
+
     if (size % 2 == 0)
-        median = (*(base + (size / 2)) + *(base + ((size / 2)) + 1))/2;
+        median = (*(base + (size / 2)) + *(base + (size / 2) - 1)) / 2.0;
     else
-        median = *(base + ((size / 2) + 1));
+        median = *(base + (size / 2));
 
     return median;
 }
