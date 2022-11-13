@@ -37,7 +37,7 @@ double *read_data(char const *file_name, int *ptr_cnt)
 
     rewind(read);
     double *heap;
-    heap = (double *)malloc(sizeof(double) * count);
+    heap = malloc(sizeof(double) * count);
     double num = 0.0;
     int i;
     for (i = 0; fscanf(read, "%lf", &num) != EOF; i++)
@@ -47,7 +47,6 @@ double *read_data(char const *file_name, int *ptr_cnt)
     printf("%lf", *heap);
     fclose(read);
     return heap;
-    free(heap);
 }
 
 double max(double const *begin, double const *end)
