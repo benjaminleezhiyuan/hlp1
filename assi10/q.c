@@ -34,7 +34,9 @@ double *read_data(char const *file_name, int *ptr_cnt)
         }
     }
     *ptr_cnt = count;
+    fclose(read);
 
+    read = fopen(file_name,"r");
     double *heap;
     heap = (double *)malloc(sizeof(double) * count);
     double num = 0.0;
