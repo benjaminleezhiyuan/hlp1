@@ -12,7 +12,10 @@ Brief
 
 // TODO: Include all necessary C standard library headers
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#undef max
+#undef min
 // TODO: Definitions of functions declared in q.h go here ...
 double *read_data(char const *file_name, int *ptr_cnt)
 {
@@ -93,7 +96,42 @@ double std_dev(double const *begin, double const *end)
     return dev;
 }
 
+void swap(double *lhs, double *rhs)
+{
+    double temp = *lhs;
+    *lhs = *rhs;
+    *rhs = temp;
+}
+
+void selection_sort(double *base, int size)
+{
+    int i, j, min_idx;
+    for (i = 0; i <= size - 2; i++)
+    {
+        min_idx = i;
+        for (j = i + 1; j < size; j++)
+        {
+            if (*(base + j) < *(base + min_idx))
+            {
+                min_idx = j;
+            }
+        }
+        swap(base + min_idx, base + i);
+    }
+}
+
 double median(double *base, int size)
 {
-    
+    double median;
+    selection_sort(base, size);
+    if (size % 2 == 0)
+        median = *(base + (size / 2)) + *(base + ((size / 2)) + 1);
+    else
+        median = *(base + ((size / 2) + 1));
+
+    return median;
+}
+
+void ltr_grade_pctg(double const *begin, double const *end, double *ltr_grades)
+{
 }

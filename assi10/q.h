@@ -10,8 +10,6 @@ Brief
 
 #ifndef Q_H
 #define Q_H
-#undef max
-#undef min
 
 
 // TODO: declare anonymous enumeration type as described in the specs
@@ -41,6 +39,7 @@ double average(double const *begin, double const *end);
 double variance(double const *begin, double const *end);
 double std_dev(double const *begin, double const *end);
 double median(double *base, int size);
+void swap(double* lhs, double* rhs);
 void selection_sort(double *base, int size);
 void ltr_grade_pctg(double const *begin, double const *end, double *ltr_grades);
 
