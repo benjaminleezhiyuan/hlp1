@@ -10,6 +10,9 @@ Brief
 
 #ifndef Q_H
 #define Q_H
+#undef max
+#undef min
+
 
 // TODO: declare anonymous enumeration type as described in the specs
 enum
