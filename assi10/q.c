@@ -129,7 +129,7 @@ double median(double *base, int size)
     double median;
     selection_sort(base, size);
     if (size % 2 == 0)
-        median = *(base + (size / 2)) + *(base + ((size / 2)) + 1);
+        median = (*(base + (size / 2)) + *(base + ((size / 2)) + 1))/2;
     else
         median = *(base + ((size / 2) + 1));
 
