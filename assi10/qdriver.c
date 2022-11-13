@@ -18,7 +18,8 @@
 #include <stdio.h>  // fprintf
 #include <stdlib.h> // exit
 #include "q.h"      // need 9 functions
-
+#undef max
+#undef min
 int main(int argc, char *argv[])
 {
   // check if the user has called the program correctly

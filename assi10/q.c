@@ -34,14 +34,18 @@ double *read_data(char const *file_name, int *ptr_cnt)
         }
     }
     *ptr_cnt = count;
-    double *heap = malloc(count * sizeof(double));
-    double num = 0;
-    while (fscanf(read, "%lf", &num) != EOF)
+
+    double *heap;
+    heap = (double *)malloc(sizeof(double) * count);
+    double num = 0.0;
+    int i;
+    for (i = 0; fscanf(read, "%lf", &num) != EOF; i++)
     {
-        *heap = num;
-        heap++;
+        *(heap + i) = num;
     }
+    fclose(read);
     return heap;
+    free(heap);
 }
 
 double max(double const *begin, double const *end)
