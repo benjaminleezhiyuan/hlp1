@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
     printf("Usage of program: ./q.out input_file_name output-file-name\n");
     exit(EXIT_FAILURE);
   }
-
   int num_val;
   double *pgrades = read_data(argv[1], &num_val);
   double min_val = min(pgrades, pgrades + num_val);
