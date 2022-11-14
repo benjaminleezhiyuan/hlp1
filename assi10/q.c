@@ -138,4 +138,39 @@ double median(double *base, int size)
 
 void ltr_grade_pctg(double const *begin, double const *end, double *ltr_grades)
 {
+    double a = 0, b = 0, c = 0, d = 0, f = 0, count = 0;
+    for (; begin < end; begin++)
+    {
+        if (*begin >= 90.0)
+        {
+            a++;
+            count++;
+        }
+        else if (*begin < 90.0 && *begin >= 80.0)
+        {
+            b++;
+            count++;
+        }
+        else if (*begin < 80.0 && *begin >= 70.0)
+        {
+            c++;
+            count++;
+        }
+        else if (*begin < 70.0 && *begin >= 60.0)
+        {
+            d++;
+            count++;
+        }
+        else
+        {
+            f++;
+            count++;
+        }
+    }
+    *ltr_grades = a / count * 100;
+    *(ltr_grades + 1) = b / count * 100;
+    *(ltr_grades + 2) = c / count * 100;
+    *(ltr_grades + 3) = d / count * 100;
+    *(ltr_grades + 4) = f / count * 100;
+    *(ltr_grades + 5) = count;
 }
