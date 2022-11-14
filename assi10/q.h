@@ -6,6 +6,7 @@ Section A
 Assignment 10
 13/11/22
 Brief
+
 */
 
 #ifndef Q_H

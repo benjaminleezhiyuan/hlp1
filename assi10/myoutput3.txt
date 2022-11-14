@@ -2,11 +2,11 @@ Total number of grades: 100
 
 Letter Grade |  %age 
 ----------------------
-     A       |  0.00
-     B       |  0.00
-     C       |  0.00
-     D       |  0.00
-     F       |  0.00
+     A       | 13.00
+     B       | 15.00
+     C       | 17.00
+     D       | 23.00
+     F       | 32.00
 
 Maximum grade     :  97.90
 Minimum grade     :  41.01

@@ -2,11 +2,11 @@ Total number of grades: 10
 
 Letter Grade |  %age 
 ----------------------
-     A       |  0.00
+     A       | 10.00
      B       |  0.00
-     C       |  0.00
-     D       |  0.00
-     F       |  0.00
+     C       | 10.00
+     D       | 50.00
+     F       | 30.00
 
 Maximum grade     :  95.95
 Minimum grade     :  34.78
