@@ -167,6 +167,7 @@ void ltr_grade_pctg(double const *begin, double const *end, double *ltr_grades)
             count++;
         }
     }
+    
     *ltr_grades = a / count * 100;
     *(ltr_grades + 1) = b / count * 100;
     *(ltr_grades + 2) = c / count * 100;
