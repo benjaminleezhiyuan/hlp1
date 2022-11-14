@@ -14,8 +14,6 @@ Brief
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#undef max
-#undef min
 // TODO: Definitions of functions declared in q.h go here ...
 double *read_data(char const *file_name, int *ptr_cnt)
 {
@@ -44,7 +42,6 @@ double *read_data(char const *file_name, int *ptr_cnt)
     {
         *(heap + i) = num;
     }
-    printf("%lf", *heap);
     fclose(read);
     return heap;
 }
@@ -140,4 +137,5 @@ double median(double *base, int size)
 
 void ltr_grade_pctg(double const *begin, double const *end, double *ltr_grades)
 {
+    
 }
