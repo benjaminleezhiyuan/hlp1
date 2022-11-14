@@ -43,7 +43,6 @@ double *read_data(char const *file_name, int *ptr_cnt)
     {
         *(heap + i) = num;
     }
-    printf("%lf", *heap);
     fclose(read);
     return heap;
 }
