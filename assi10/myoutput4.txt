@@ -2,11 +2,11 @@ Total number of grades: 1000
 
 Letter Grade |  %age 
 ----------------------
-     A       |  0.00
-     B       |  0.00
-     C       |  0.00
-     D       |  0.00
-     F       |  0.00
+     A       | 11.10
+     B       | 14.00
+     C       | 16.30
+     D       | 12.80
+     F       | 45.80
 
 Maximum grade     :  98.99
 Minimum grade     :  30.00

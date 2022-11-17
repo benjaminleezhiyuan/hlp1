@@ -2,10 +2,10 @@ Total number of grades: 25
 
 Letter Grade |  %age 
 ----------------------
-     A       |  0.00
-     B       |  0.00
-     C       |  0.00
-     D       |  0.00
+     A       | 36.00
+     B       | 20.00
+     C       | 32.00
+     D       | 12.00
      F       |  0.00
 
 Maximum grade     :  97.37
