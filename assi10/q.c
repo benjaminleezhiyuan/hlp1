@@ -6,7 +6,9 @@ Section A
 Assignment 10
 13/11/22
 Brief
-
+This file contains functions that allows for a set of grades to be read
+It processes the data and returns max, min, average, variance, standard deviation and median of grades.
+It also returns the percentage of each letter grade.
 */
 
 #include "q.h" // we're including q.h here because we want to apply the DRY principle [see specs for additional info]

@@ -1,4 +1,13 @@
-// @todo: Add a file-level documentation header as explained in Lab 2 specs ...
+/*
+q.h
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Lab 11
+18/11/22
+Brief
+
+*/
 
 // @todo: Copy type aliases and macros from the current specs
 struct Datum

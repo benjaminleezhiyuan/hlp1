@@ -1,6 +1,16 @@
-// @todo: Add a file documentation header as explained in the specs ...
+/*
+q.c
+Benjamin Lee (benjaminzhiyuan.lee)
+CSD1121F22
+Section A
+Lab 11
+18/11/22
+Brief
 
+*/
 // @todo: Add necessary C standard library headers here ...
+#include <stdio.h>
+#include "q.h"
 
 // You should document [not necessary for grading but an excellent habit
 // to acquire] your implementation of functions to aid
@@ -21,3 +31,35 @@
 
 // @todo: Provide the definition of the function(s) that
 // match(es) the declaration(s) in q.h ...
+
+void print_data(
+    const void *ptr, // Address of the first byte.
+    size_t size,     // Total count of bytes.
+    size_t span      // Count of bytes printed per line.
+)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        printf("%x ", *((char *)(ptr) + i));
+
+        if ((i + 1) % 4 == 0)
+        {
+            printf("  ");
+        }
+
+        if ((i + 1) % span == 0)
+        {
+            printf("|");
+
+            for (size_t j = i - span + 1; j <= i; j++)
+            {
+                if (j % 4 == 0)
+                {
+                    printf("   ");
+                }
+                printf("%c%s", *((char *)(ptr) + j), (j + 1) % 4 == 0 ? "" : " ");
+            }
+            printf("\n");
+        }
+    }
+}

@@ -6,7 +6,7 @@ Section A
 Assignment 10
 13/11/22
 Brief
-
+This file contains declarations for functions needed in qdriver and the enummeration for grades.
 */
 
 #ifndef Q_H
