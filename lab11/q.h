@@ -6,7 +6,7 @@ Section A
 Lab 11
 18/11/22
 Brief
-
+Contains declarations for function print_data and struct Datum
 */
 
 // @todo: Copy type aliases and macros from the current specs

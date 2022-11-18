@@ -6,7 +6,8 @@ Section A
 Lab 11
 18/11/22
 Brief
-
+This file contains functions that prints out the contents of array and formats it
+according to the values given.
 */
 // @todo: Add necessary C standard library headers here ...
 #include <stdio.h>
@@ -38,9 +39,10 @@ void print_data(
     size_t span      // Count of bytes printed per line.
 )
 {
+    char *hex = (char *)ptr;
     for (size_t i = 0; i < size; i++)
     {
-        printf("%x ", *((char *)(ptr) + i));
+        printf("%x ", *(hex + i));
 
         if ((i + 1) % 4 == 0)
         {
@@ -57,7 +59,7 @@ void print_data(
                 {
                     printf("   ");
                 }
-                printf("%c%s", *((char *)(ptr) + j), (j + 1) % 4 == 0 ? "" : " ");
+                printf("%c%s", *(hex + j), (j + 1) % 4 == 0 ? "" : " ");
             }
             printf("\n");
         }
