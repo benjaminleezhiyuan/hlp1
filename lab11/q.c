@@ -39,21 +39,21 @@ void print_data(
     size_t span      // Count of bytes printed per line.
 )
 {
-    char *hex = (char *)ptr;
-    for (size_t i = 0; i < size; i++)
+    char *hex = (char *)ptr;          // hex becomes char ptr
+    for (size_t i = 0; i < size; i++) // goes through entire array
     {
-        printf("%x ", *(hex + i));
+        printf("%x ", *(hex + i)); // prints byte with space in between
 
-        if ((i + 1) % 4 == 0)
+        if ((i + 1) % 4 == 0) // prints 3 spaces every 4 bytes
         {
             printf("  ");
         }
 
-        if ((i + 1) % span == 0)
+        if ((i + 1) % span == 0) // prints | when reaches span (max byte per line)
         {
             printf("|");
 
-            for (size_t j = i - span + 1; j <= i; j++)
+            for (size_t j = i - span + 1; j <= i; j++) // goes through element inside element 
             {
                 if (j % 4 == 0)
                 {
