@@ -46,7 +46,7 @@ void free_grades(int **grades,int student_count)
 {
     for(int i=student_count-1;i>=0;i--)
     {
-        free(*(grades+i));
+        free(grades[i]);
     }
     free(grades);
 }
@@ -71,7 +71,7 @@ int **read_grades(char const *file_name, int *student_count, int *quiz_count)
     {
         grades[i] = (int *)malloc(sizeof(int) * *quiz_count);
 
-        if (!*(grades + i))
+        if (!grades[i])
         {
             return NULL;
         }
