@@ -33,6 +33,7 @@
     global counta
     global counts
 
+
 len:
 ; TODO: - Given a null-terminated string. First parameter 
 ;         has address of the string.
